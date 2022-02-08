@@ -9,14 +9,18 @@ function addItem(item){
   return true;
 }
 
-//function listitems(){
+function listItems(){
+  for (i=0; i<basket.length; i++){
+    console.log(i);
+  }
+}
 
-//}
-
-//function empty(){
-
-//}
+function empty(){
+  
+}
 
 console.log(`Basket is ${basket}`);
 console.log('Adding apples (expect true)', addItem('apples'));
+console.log('Adding bananas (expect true)', addItem('bananas'));
+console.log('Adding strawberries (expect true)', addItem('strawberries'));
 console.log(`Basket is now ${basket}`);
