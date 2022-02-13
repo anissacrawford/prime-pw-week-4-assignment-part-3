@@ -14,31 +14,35 @@ while (basket.length < maxItems){
 }
 
 function listItems(){
-  for (i=0; i<basket.length; i++){
-    console.log(i);
+  for (let i=0; i<basket.length; i++){
+    console.log(basket[i]);
   }
 }
+
+
 
 function empty(item){
   basket.pop(item);
   return false;
 }
 
-console.log(`Basket is ${basket} `);
+
+
+//console.log(`Basket is ${basket} `);
 console.log('Adding apples (expect true)', addItem('apples'));
 console.log('Adding bananas (expect true)', addItem('bananas'));
 console.log('Adding strawberries (expect true)', addItem('strawberries'));
-console.log(`Basket is now ${basket} `);
+console.log('Adding kiwi (expect true)', addItem('kiwi'));
+//console.log('Adding pomegranate (expect true)', addItem('pomegranate'));//returns true bc more than maxItems
+listItems(basket); //how to log this without undefined
 console.log('Basket is full: ', isFull());
 
 
-//const maxItems = 5
-
 function isFull(){
   for (i=0; i<maxItems; i++){
-    if (i < maxItems){
+    if (basket.length < maxItems){
       return false;
-    } else if (i >= maxItems) {
+    } else {
       return true;
     }
   }
