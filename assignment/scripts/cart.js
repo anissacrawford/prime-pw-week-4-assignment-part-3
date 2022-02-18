@@ -7,7 +7,9 @@ const maxItems = 5
 
 function addItem(item){
   //console.log('in addItem', item);
-while (basket.length < maxItems){
+if (isFull() === true){
+  return false;
+} else {
   basket.push(item);
   return true;
   }
@@ -21,11 +23,11 @@ function listItems(){
 
 
 
-function empty(item){
-  basket.pop(item);
-  return false;
+function empty(){
+basket = [];
 }
 
+//console.log(basket); logs an empty basket 
 
 
 //console.log(`Basket is ${basket} `);
@@ -39,11 +41,9 @@ console.log('Basket is full: ', isFull());
 
 
 function isFull(){
-  for (i=0; i<maxItems; i++){
     if (basket.length < maxItems){
       return false;
     } else {
       return true;
     }
   }
-}
